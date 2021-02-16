@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="src/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + Lit-Element App</title>
+  <script type="module" src="/src/example-component/example-component.ts"></script>
+  <style>
+    button {
+      margin-top: 1rem;
+      padding: .5rem;
+      outline: none;
+      background: #20caa5;
+      border: none;
+      box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.26);
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1bb493;
+    }
+
+    /* Change the vars to see them reflected in our custom element */
+    example-component {
+      /* general stuff */
+      --example-component-font-family: Roboto;
+
+      /* text */
+      --example-component-text-color: black;
+      --example-component-text-color-dark: white;
+
+      /* background */
+      --example-component-background-color: white;
+      --example-component-background-color-dark: #081a44;
+
+      /* input */
+      --example-component-input-color: white;
+      --example-component-input-color-dark: #0e265e;
+    }
+
+    .warning {
+      --example-component-text-color-warning: #f30000;
+    }
+
+    h3 {
+      /* I don't trickle down into the custom element */
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <example-component id="example" class="warning">
+  </example-component>
+  <button type="button" id="removeButton">Remove element from DOM</button><br>
+  <button type="button" id="toggleWarningButton">Toggle Warning</button>
+  <button type="button" id="toggleDarkModeButton">Toggle Dark Mode</button>
+</body>
+
+<script>
+  const customElement = document.getElementById('example');
+  const removeButton = document.getElementById('removeButton');
+  const toggleWarningButton = document.getElementById('toggleWarningButton');
+  const toggleDarkModeButton = document.getElementById('toggleDarkModeButton');
+
+  // remove our custom element from dom
+  removeButton.addEventListener('click', () => {
+    customElement.remove();
+    toggleWarningButton.remove();
+    toggleDarkModeButton.remove();
+  });
+
+  // add or remove class 'warning' on toggle
+  toggleWarningButton.addEventListener('click', () => {
+    if (customElement.classList.contains('warning')) customElement.classList.remove('warning')
+    else customElement.classList.add('warning')
+  })
+
+  toggleDarkModeButton.addEventListener('click', () => {
+    if (customElement.hasAttribute('dark')) customElement.removeAttribute('dark');
+    else customElement.setAttribute('dark', true)
+  })
+</script>
+
+
+</html>
