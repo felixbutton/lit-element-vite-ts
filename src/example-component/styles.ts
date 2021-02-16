@@ -1,4 +1,4 @@
-import { css } from "lit-element";
+import { css } from "../../node_modules/lit-element";
 
 export const exampleComponentStyles = css`
   :host { 

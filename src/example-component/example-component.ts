@@ -1,4 +1,4 @@
-import { html, LitElement, property, customElement, internalProperty, PropertyValues } from 'lit-element';
+import { html, LitElement, property, customElement, internalProperty, PropertyValues } from '../../node_modules/lit-element';
 import { classMap } from 'lit-html/directives/class-map';
 import { exampleComponentStyles } from "./styles";
 

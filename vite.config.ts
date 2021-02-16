@@ -7,6 +7,7 @@ export default defineConfig({
       entry: 'src/example-component/example-component.ts',
       formats: ['es']
     },
+    target: 'esnext',
     rollupOptions: {
       external: /^lit-element/
     }

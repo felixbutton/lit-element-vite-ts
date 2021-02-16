@@ -2,14 +2,10 @@
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
-    "lib": [
-      "es2017",
-      "dom",
-      "dom.iterable"
-    ],
-    "types": [
-      "vite/client"
-    ],
+    "lib": ["es2017", "dom", "dom.iterable"],
+    "types": ["vite/client"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "outDir": "./types",
     "rootDir": "./src",
     "strict": true,
@@ -22,8 +18,6 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src/**/*.ts"
-  ],
+  "include": ["src/**/*.ts"],
   "exclude": []
 }
