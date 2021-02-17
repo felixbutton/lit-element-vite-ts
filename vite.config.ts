@@ -8,8 +8,8 @@ export default defineConfig({
       formats: ['es']
     },
     target: 'esnext',
-    rollupOptions: {
-      external: /^lit-element/
-    }
+    // rollupOptions: {
+    //   external: /^lit-element/
+    // }
   }
 })
